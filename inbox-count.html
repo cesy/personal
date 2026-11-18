@@ -14,7 +14,7 @@ h3{margin:0 0 10px;color:#5f6368;font-size:16px;text-transform:uppercase;letter-
   <div class="sub">Unread: <span id="u">…</span></div>
 </div>
 <script>
-fetch("https://script.google.com/macros/u/1/s/AKfycbw5w8d6nOAcEp26G-8u5bHyBniAEL8ue2-DQ8W2nBsMq65VqsGdgByoTtPnA5TbUCVw/exec", { credentials: "omit" })
+fetch("https://script.google.com/macros/s/AKfycbw5w8d6nOAcEp26G-8u5bHyBniAEL8ue2-DQ8W2nBsMq65VqsGdgByoTtPnA5TbUCVw/exec?format=json", { credentials: "omit" })
   .then(r => r.json())
   .then(d => { t.textContent = d.total; u.textContent = d.unread; })
   .catch(e => { t.textContent = "Error"; u.textContent = e; });
