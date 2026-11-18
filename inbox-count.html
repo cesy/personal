@@ -1,0 +1,21 @@
+<!doctype html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inbox count</title>
+<style>
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;text-align:center;padding-top:60px;background:#f4f6f8;color:#202124}
+.card{background:#fff;max-width:320px;margin:0 auto;padding:30px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.08)}
+h3{margin:0 0 10px;color:#5f6368;font-size:16px;text-transform:uppercase;letter-spacing:1px}
+.count{font-size:64px;font-weight:bold;color:#1a73e8;margin:10px 0}
+.sub{font-size:14px;color:#5f6368}
+</style>
+<div class="card">
+  <h3>Inbox Total</h3>
+  <div class="count" id="t">…</div>
+  <div class="sub">Unread: <span id="u">…</span></div>
+</div>
+<script>
+fetch("https://script.google.com/macros/u/1/s/AKfycbw5w8d6nOAcEp26G-8u5bHyBniAEL8ue2-DQ8W2nBsMq65VqsGdgByoTtPnA5TbUCVw/exec", { credentials: "omit" })
+  .then(r => r.json())
+  .then(d => { t.textContent = d.total; u.textContent = d.unread; })
+  .catch(e => { t.textContent = "Error"; u.textContent = e; });
+</script>
